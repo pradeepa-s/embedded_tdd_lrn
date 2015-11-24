@@ -4,7 +4,7 @@
 SILENCE = @
 
 #---- Outputs ----#
-COMPONENT_NAME = pilot
+COMPONENT_NAME = led_driver
 
 #--- Inputs ----#
 UNITY_HOME = unity.framework
@@ -23,7 +23,7 @@ SRC_DIRS = \
 
 TEST_SRC_DIRS = \
 	$(PROJECT_TEST_DIR)\
-	$(PROJECT_TEST_DIR)/group1\
+	$(PROJECT_TEST_DIR)/led_driver\
 	$(PROJECT_TEST_DIR)/group2\
 	$(UNITY_HOME)/src\
     $(UNITY_HOME)/extras/fixture/src\
@@ -31,6 +31,7 @@ TEST_SRC_DIRS = \
 
 INCLUDE_DIRS =\
   .\
+	$(PROJECT_HOME_DIR)/inc \
   $(UNITY_HOME)/src\
   $(UNITY_HOME)/extras/fixture/src\
   $(UNITY_HOME)/extras/fixture/test\

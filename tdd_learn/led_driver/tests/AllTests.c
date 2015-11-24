@@ -2,7 +2,7 @@
 
 static void RunAllTests(void)
 {
-	RUN_TEST_GROUP(group1);
+	RUN_TEST_GROUP(led_driver);
 }
 
 int main(int argc, char * argv[])
