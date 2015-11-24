@@ -1,6 +1,6 @@
 #include "unity_fixture.h"
 
-TEST_GROUP_RUNNER(group1)
+TEST_GROUP_RUNNER(led_driver)
 {
-	RUN_TEST_CASE(group1, test1);
+	RUN_TEST_CASE(led_driver, LedsOffAfterCreate);
 }

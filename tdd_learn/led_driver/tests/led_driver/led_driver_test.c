@@ -11,7 +11,7 @@ TEST_TEAR_DOWN(led_driver)
 {
 }
 
-TEST(led_driver, LedOffAfterCreate)
+TEST(led_driver, LedsOffAfterCreate)
 {
 TEST_FAIL_MESSAGE("Start here");
 }
