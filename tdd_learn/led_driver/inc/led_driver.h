@@ -5,5 +5,6 @@
 
 void LedDriver_Create(uint16_t *address);
 void LedDriver_TurnOn(int led_no);
+void LedDriver_TurnOff(int led_no);
 
 #endif
