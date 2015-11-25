@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "led_driver.h"
 
+static uint16_t convertLedNumberToBit(int led_no);
 static uint16_t *led_address;
 
 void LedDriver_Create(uint16_t *address)
