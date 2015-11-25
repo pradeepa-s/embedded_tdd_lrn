@@ -11,10 +11,15 @@ void LedDriver_Create(uint16_t *address)
 
 void LedDriver_TurnOn(int led_no)
 {
-	*led_address |= (1 << (led_no - 1));
+	*led_address |= convertLedNumberToBit(led_no);
 }
 
 void LedDriver_TurnOff(int led_no)
 {
 	*led_address = 0;
+}
+
+static uint16_t convertLedNumberToBit(int led_no)
+{
+	return (1 << (led_no - 1));
 }
