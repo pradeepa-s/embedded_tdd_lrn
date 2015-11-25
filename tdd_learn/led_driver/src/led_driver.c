@@ -27,4 +27,5 @@ static uint16_t convertLedNumberToBit(int led_no)
 
 void LedDriver_TurnAllOn()
 {
+	*led_address = 0xffff;
 }
