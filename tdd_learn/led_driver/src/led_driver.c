@@ -19,7 +19,7 @@ void LedDriver_TurnOn(int led_no)
 
 void LedDriver_TurnOff(int led_no)
 {
-	*led_address = 0;
+	*led_address &= ~(convertLedNumberToBit(led_no));
 }
 
 static uint16_t convertLedNumberToBit(int led_no)
