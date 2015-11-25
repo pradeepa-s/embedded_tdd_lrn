@@ -24,3 +24,7 @@ static uint16_t convertLedNumberToBit(int led_no)
 {
 	return (1 << (led_no - 1));
 }
+
+void LedDriver_TurnAllOn()
+{
+}
