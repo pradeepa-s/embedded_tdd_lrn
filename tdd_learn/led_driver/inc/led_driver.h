@@ -9,5 +9,6 @@ void LedDriver_TurnOn(int led_no);
 void LedDriver_TurnOff(int led_no);
 void LedDriver_TurnAllOn();
 uint8_t LedDriver_IsOn(int led_no);
+uint8_t LedDriver_IsOff(int led_no);
 
 #endif
