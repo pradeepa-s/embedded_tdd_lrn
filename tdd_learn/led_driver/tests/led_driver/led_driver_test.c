@@ -42,6 +42,14 @@ TEST(led_driver, TurnOnMultipleLeds)
 	TEST_ASSERT_EQUAL_HEX16(0x180, virtualLeds);
 }
 
+TEST(led_driver, TurnOffMultipleLeds)
+{
+	LedDriver_TurnAllOn();
+	LedDriver_TurnOff(3);
+	LedDriver_TurnOff(14);
+	TEST_ASSERT_EQUAL_HEX16((~0x2004) & 0xffff, virtualLeds);
+}
+
 TEST(led_driver, TurnOffAnyLed)
 {
 	LedDriver_TurnAllOn();
@@ -53,6 +61,13 @@ TEST(led_driver, AllOn)
 {
 	LedDriver_TurnAllOn();
 	TEST_ASSERT_EQUAL_HEX16(0xffff, virtualLeds);
+}
+
+TEST(led_driver, AllOff)
+{
+	LedDriver_TurnAllOn();
+	LedDriver_TurnAllOff();
+	TEST_ASSERT_EQUAL(0, virtualLeds);
 }
 
 TEST(led_driver, LedMemoryIsNotReadable)
@@ -137,17 +152,3 @@ TEST(led_driver, OutOfBoundsLedsAreAlwaysOffForIsOff)
 	
 }
 
-TEST(led_driver, TurnOffMultipleLeds)
-{
-	LedDriver_TurnAllOn();
-	LedDriver_TurnOff(3);
-	LedDriver_TurnOff(14);
-	TEST_ASSERT_EQUAL_HEX16((~0x2004) & 0xffff, virtualLeds);
-}
-
-TEST(led_driver, AllOff)
-{
-	LedDriver_TurnAllOn();
-	LedDriver_TurnAllOff();
-	TEST_ASSERT_EQUAL(0, virtualLeds);
-}

@@ -41,14 +41,15 @@ void LedDriver_TurnOff(int led_no)
 	update_hardware();
 }
 
-static uint16_t convertLedNumberToBit(int led_no)
-{
-	return (1 << (led_no - 1));
-}
-
 void LedDriver_TurnAllOn()
 {
 	led_image = ALL_LEDS_ON;
+	update_hardware();
+}
+
+void LedDriver_TurnAllOff()
+{
+	led_image = ALL_LEDS_OFF;
 	update_hardware();
 }
 
@@ -66,12 +67,6 @@ uint8_t LedDriver_IsOff(int led_no)
 	return  (!LedDriver_IsOn(led_no));
 }
 
-void LedDriver_TurnAllOff()
-{
-	led_image = ALL_LEDS_OFF;
-	update_hardware();
-}
-
 static void update_hardware(void)
 {
 	*led_address = led_image;
@@ -81,3 +76,10 @@ static uint8_t is_led_outofbound(uint16_t led_no)
 {
 	return (led_no < FIRST_LED || led_no > FINAL_LED);
 }
+
+static uint16_t convertLedNumberToBit(int led_no)
+{
+	return (1 << (led_no - 1));
+}
+
+
