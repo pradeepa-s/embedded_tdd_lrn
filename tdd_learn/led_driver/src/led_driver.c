@@ -7,6 +7,7 @@ static uint8_t is_led_outofbound(uint16_t led_no);
 
 enum {ALL_LEDS_ON = ~0, ALL_LEDS_OFF = ~ALL_LEDS_ON};
 enum {FIRST_LED = 1, FINAL_LED = 16};
+enum {FALSE = 0, TRUE = ~FALSE};
 
 static uint16_t *led_address;
 static uint16_t led_image;
@@ -54,10 +55,10 @@ void LedDriver_TurnAllOn()
 uint8_t LedDriver_IsOn(int led_no)
 {
 	if(is_led_outofbound(led_no)){
-		return 0;
+		return FALSE;
 	}
 
-	return ((led_image & (convertLedNumberToBit(led_no))) != 0 );
+	return ((led_image & (convertLedNumberToBit(led_no))) != FALSE);
 }
 
 static void update_hardware(void)
