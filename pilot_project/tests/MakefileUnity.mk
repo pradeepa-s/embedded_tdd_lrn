@@ -20,6 +20,7 @@ UNITY_WARNINGFLAGS = -Wall -Werror -Wswitch-default
 
 SRC_DIRS = \
 	$(PROJECT_HOME_DIR)/src \
+	$(PROJECT_HOME_DIR)/misc\
 
 TEST_SRC_DIRS = \
 	$(PROJECT_TEST_DIR)\
@@ -28,12 +29,14 @@ TEST_SRC_DIRS = \
 	$(UNITY_HOME)/src\
     $(UNITY_HOME)/extras/fixture/src\
     $(UNITY_HOME)/extras/fixture/test\
+	$(PROJECT_HOME_DIR)/misc\
 
 INCLUDE_DIRS =\
   .\
   $(UNITY_HOME)/src\
   $(UNITY_HOME)/extras/fixture/src\
   $(UNITY_HOME)/extras/fixture/test\
-  
+  $(PROJECT_HOME_DIR)/misc\
+
 include $(UNITY_BUILD_HOME)/MakefileWorker.mk
 
