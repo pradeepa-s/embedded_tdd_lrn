@@ -66,6 +66,11 @@ uint8_t LedDriver_IsOff(int led_no)
 	return  (!LedDriver_IsOn(led_no));
 }
 
+void LedDriver_TurnAllOff()
+{
+//	led_lmage = ALL_LEDS_OFF;
+//	update_hardware();
+}
 
 static void update_hardware(void)
 {
