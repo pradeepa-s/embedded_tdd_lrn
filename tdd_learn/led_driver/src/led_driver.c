@@ -61,6 +61,16 @@ uint8_t LedDriver_IsOn(int led_no)
 	return ((led_image & (convertLedNumberToBit(led_no))) != FALSE);
 }
 
+uint8_t LedDriver_IsOff(int led_no)
+{
+//	if(is_led_outofbound(led_no)){
+//		return FALSE;
+//	}
+
+	return TRUE;// ((led_image & (convertLedNumberToBit(led_no))) != FALSE);
+}
+
+
 static void update_hardware(void)
 {
 	*led_address = led_image;
