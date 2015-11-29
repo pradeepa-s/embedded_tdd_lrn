@@ -67,7 +67,7 @@ uint8_t LedDriver_IsOff(int led_no)
 //		return FALSE;
 //	}
 
-	return TRUE;// ((led_image & (convertLedNumberToBit(led_no))) != FALSE);
+	return  ((led_image & (convertLedNumberToBit(led_no))) != FALSE);
 }
 
 
