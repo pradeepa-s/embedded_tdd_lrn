@@ -136,3 +136,11 @@ TEST(led_driver, OutOfBoundsLedsAreAlwaysOffForIsOff)
 	TEST_ASSERT_TRUE(LedDriver_IsOff(1244));
 	
 }
+
+TEST(led_driver, TurnOffMultipleLeds)
+{
+	LedDriver_TurnAllOn();
+	LedDriver_TurnOff(3);
+	LedDriver_TurnOff(14);
+	TEST_ASSERT_EQUAL_HEX16((~0x2004) & 0xffff, virtualLeds);
+}
