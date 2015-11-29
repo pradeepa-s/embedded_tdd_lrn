@@ -93,6 +93,6 @@ TEST(led_driver, OutOfBoundsTurnOffChangesNothing)
 TEST(led_driver, OutOfBoundProducesRuntimeError)
 {
 	LedDriver_TurnOn(-1);
-	TEST_ASSERT_EQUAL_STRING("LED Driver: out-of-bounds LED", RuntimeErrorStub_GetLastError());
+	TEST_ASSERT_EQUAL_STRING("LED Driver: out-of-bounds LED ON", RuntimeErrorStub_GetLastError());
 	TEST_ASSERT_EQUAL(-1, RuntimeErrorStub_GetLastParameter());
 }

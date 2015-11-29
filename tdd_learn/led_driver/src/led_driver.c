@@ -31,7 +31,7 @@ void LedDriver_TurnOn(int led_no)
 void LedDriver_TurnOff(int led_no)
 {
 	if(is_led_outofbound(led_no)){
-		RUNTIME_ERROR("LED Driver: out-of-bounds LED", -1);
+		RUNTIME_ERROR("LED Driver: out-of-bounds LED ON", -1);
 		return;
 	}
 
