@@ -13,5 +13,6 @@ TEST_GROUP_RUNNER(led_driver)
 	RUN_TEST_CASE(led_driver, OutOfBoundsTurnOnChangesNothing);
 	RUN_TEST_CASE(led_driver, OutOfBoundsTurnOffChangesNothing);		
 	RUN_TEST_CASE(led_driver, OutOfBoundLedOnProducesRuntimeError);	
-	RUN_TEST_CASE(led_driver, OutOfBoundLedOffProducesRuntimeError);	
+	RUN_TEST_CASE(led_driver, OutOfBoundLedOffProducesRuntimeError);
+	RUN_TEST_CASE(led_driver, IsOn);
 }
