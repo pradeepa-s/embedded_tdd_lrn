@@ -27,16 +27,16 @@ TEST_SRC_DIRS = \
 	$(PROJECT_TEST_DIR)/group1\
 	$(PROJECT_TEST_DIR)/group2\
 	$(UNITY_HOME)/src\
-    $(UNITY_HOME)/extras/fixture/src\
-    $(UNITY_HOME)/extras/fixture/test\
+	$(UNITY_HOME)/extras/fixture/src\
+	$(UNITY_HOME)/extras/fixture/test\
 	$(PROJECT_HOME_DIR)/misc\
 
 INCLUDE_DIRS =\
-  .\
-  $(UNITY_HOME)/src\
-  $(UNITY_HOME)/extras/fixture/src\
-  $(UNITY_HOME)/extras/fixture/test\
-  $(PROJECT_HOME_DIR)/misc\
+	.\
+	$(UNITY_HOME)/src\
+	$(UNITY_HOME)/extras/fixture/src\
+	$(UNITY_HOME)/extras/fixture/test\
+	$(PROJECT_HOME_DIR)/misc\
 
 include $(UNITY_BUILD_HOME)/MakefileWorker.mk
 
