@@ -53,7 +53,7 @@ void LedDriver_TurnAllOn()
 
 uint8_t LedDriver_IsOn(int led_no)
 {
-	return 0;
+	return (led_image & (convertLedNumberToBit(led_no)));
 }
 
 static void update_hardware(void)
