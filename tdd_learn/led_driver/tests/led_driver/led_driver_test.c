@@ -77,3 +77,14 @@ TEST(led_driver, OutOfBoundsTurnOnChangesNothing)
 	
 	TEST_ASSERT_EQUAL_HEX16(0, virtualLeds);
 }
+
+TEST(led_driver, OutOfBoundsTurnOffChangesNothing)
+{
+	LedDriver_TurnAllOn();
+	LedDriver_TurnOff(-1);
+	LedDriver_TurnOff(0);
+	LedDriver_TurnOff(17);
+	LedDriver_TurnOff(3141);
+	
+	TEST_ASSERT_EQUAL_HEX16(0xffff, virtualLeds);
+}
