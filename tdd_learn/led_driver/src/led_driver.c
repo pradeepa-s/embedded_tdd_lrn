@@ -63,9 +63,9 @@ uint8_t LedDriver_IsOn(int led_no)
 
 uint8_t LedDriver_IsOff(int led_no)
 {
-//	if(is_led_outofbound(led_no)){
-//		return FALSE;
-//	}
+	if(is_led_outofbound(led_no)){
+		return FALSE;
+	}
 
 	return  ((led_image & (convertLedNumberToBit(led_no))) == FALSE);
 }
