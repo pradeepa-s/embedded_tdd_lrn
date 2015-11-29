@@ -53,6 +53,10 @@ void LedDriver_TurnAllOn()
 
 uint8_t LedDriver_IsOn(int led_no)
 {
+	if(is_led_outofbound(led_no)){
+		return 0;
+	}
+
 	return ((led_image & (convertLedNumberToBit(led_no))) != 0 );
 }
 
