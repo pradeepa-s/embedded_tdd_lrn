@@ -51,6 +51,11 @@ void LedDriver_TurnAllOn()
 	update_hardware();
 }
 
+uint8_t LedDriver_IsOn(int led_no)
+{
+	return 0;
+}
+
 static void update_hardware(void)
 {
 	*led_address = led_image;
