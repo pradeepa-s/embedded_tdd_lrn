@@ -68,7 +68,7 @@ TEST(led_driver, UpperAndLowerBounds)
 	TEST_ASSERT_EQUAL_HEX16(0x8001, virtualLeds);
 }
 
-TEST(led_driver, OutOfBoundsChangesNothing)
+TEST(led_driver, OutOfBoundsTurnOnChangesNothing)
 {
 	LedDriver_TurnOn(-1);
 	LedDriver_TurnOn(0);

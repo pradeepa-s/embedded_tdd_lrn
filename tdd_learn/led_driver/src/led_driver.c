@@ -18,6 +18,10 @@ void LedDriver_Create(uint16_t *address)
 
 void LedDriver_TurnOn(int led_no)
 {
+	if(led_no <= 0 || led_no > 16){
+		return;
+	}
+
 	led_image |= convertLedNumberToBit(led_no);
 	update_hardware();
 }
