@@ -127,7 +127,12 @@ TEST(led_driver, IsOff)
 	TEST_ASSERT_FALSE(LedDriver_IsOff(14));
 }
 
-TEST(led_driver, OutOfBoundsLedsAreOffForIsOff)
+TEST(led_driver, OutOfBoundsLedsAreAlwaysOffForIsOff)
 {
-
+	LedDriver_TurnAllOn();
+	TEST_ASSERT_FALSE(LedDriver_IsOff(0));
+	TEST_ASSERT_FALSE(LedDriver_IsOff(17));
+	TEST_ASSERT_FALSE(LedDriver_IsOff(-1));
+	TEST_ASSERT_FALSE(LedDriver_IsOff(1244));
+	
 }
