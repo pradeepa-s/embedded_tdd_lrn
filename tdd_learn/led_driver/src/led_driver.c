@@ -37,7 +37,7 @@ void LedDriver_TurnOff(int led_no)
 		return;
 	}
 
-	led_image &= 0xffff;//~(convertLedNumberToBit(led_no));
+	led_image &= ~(convertLedNumberToBit(led_no));
 	update_hardware();
 }
 
