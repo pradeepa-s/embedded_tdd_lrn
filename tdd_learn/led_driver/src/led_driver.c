@@ -21,6 +21,7 @@ void LedDriver_Create(uint16_t *address)
 void LedDriver_TurnOn(int led_no)
 {
 	if(is_led_outofbound(led_no)){
+		RUNTIME_ERROR("LED Driver: out-of-bounds LED ON", -1);
 		return;
 	}
 
@@ -31,7 +32,7 @@ void LedDriver_TurnOn(int led_no)
 void LedDriver_TurnOff(int led_no)
 {
 	if(is_led_outofbound(led_no)){
-		RUNTIME_ERROR("LED Driver: out-of-bounds LED ON", -1);
+		RUNTIME_ERROR("LED Driver: out-of-bounds LED OFF", -1);
 		return;
 	}
 

@@ -90,9 +90,16 @@ TEST(led_driver, OutOfBoundsTurnOffChangesNothing)
 	TEST_ASSERT_EQUAL_HEX16(0xffff, virtualLeds);
 }
 
-TEST(led_driver, OutOfBoundProducesRuntimeError)
+TEST(led_driver, OutOfBoundLedOnProducesRuntimeError)
 {
 	LedDriver_TurnOn(-1);
 	TEST_ASSERT_EQUAL_STRING("LED Driver: out-of-bounds LED ON", RuntimeErrorStub_GetLastError());
+	TEST_ASSERT_EQUAL(-1, RuntimeErrorStub_GetLastParameter());
+}
+
+TEST(led_driver, OutOfBoundLedOffProducesRuntimeError)
+{	
+	LedDriver_TurnOff(-1);
+	TEST_ASSERT_EQUAL_STRING("LED Driver: out-of-bounds LED OFF", RuntimeErrorStub_GetLastError());
 	TEST_ASSERT_EQUAL(-1, RuntimeErrorStub_GetLastParameter());
 }
