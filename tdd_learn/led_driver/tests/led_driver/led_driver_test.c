@@ -144,3 +144,10 @@ TEST(led_driver, TurnOffMultipleLeds)
 	LedDriver_TurnOff(14);
 	TEST_ASSERT_EQUAL_HEX16((~0x2004) & 0xffff, virtualLeds);
 }
+
+TEST(led_driver, AllOff)
+{
+	LedDriver_TurnAllOn();
+	LedDriver_TurnAllOff();
+	TEST_ASSERT_EQUAL(0, virtualLeds);
+}
